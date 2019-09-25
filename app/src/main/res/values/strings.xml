@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">smartComponentCabinet</string>
+    <string name="title_home">搜索</string>
+    <string name="title_dashboard">获取</string>
+    <string name="title_notifications">管理</string>
+</resources>
