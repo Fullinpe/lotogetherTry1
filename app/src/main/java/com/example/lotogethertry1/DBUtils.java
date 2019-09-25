@@ -8,18 +8,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-class DBUtils {
+public class DBUtils {
 
     // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://10.22.236.141:3306/scc?serverTimezone=Asia/Shanghai&&useSSL=false&&allowPublicKeyRetrieval=true";
+    private static final String DB_URL = "jdbc:mysql://192.168.1.231:3306/scc?serverTimezone=Asia/Shanghai&&useSSL=false&&allowPublicKeyRetrieval=true";
 //    private static final String DB_URL = "jdbc:mysql://192.168.137.1:3306/together?serverTimezone=Asia/Shanghai&&useSSL=false&&allowPublicKeyRetrieval=true";
 
     // 数据库的用户名与密码，需要根据自己的设置
     private static final String USER = "customer";
     private static final String PASS = "1234569877";
     @SuppressWarnings("all")
-    static String[][] select_DB(String sql, String... strings) {
+    public static String[][] select_DB(String sql, String... strings) {
         String[][] reStrs = null;
         int x=0;
         Connection conn = null;
@@ -73,7 +73,7 @@ class DBUtils {
         }
         return reStrs;
     }
-    static InputStream[] selectBLOB(String sql, String string) {
+    public static InputStream[] selectBLOB(String sql, String string) {
         InputStream[] reis = null;
         int x=0;
         Connection conn = null;
@@ -122,7 +122,7 @@ class DBUtils {
         }
         return reis;
     }
-    static int _DB(String sql)
+    public static int _DB(String sql)
     {
         int reint=0;
         Connection conn = null;

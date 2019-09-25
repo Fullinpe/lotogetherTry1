@@ -13,7 +13,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lotogethertry1.MainActivity;
 import com.example.lotogethertry1.R;
+import com.example.lotogethertry1.constance;
 
 import java.util.List;
 import java.util.Map;
@@ -67,7 +69,11 @@ public class myRecyclerAdapter extends RecyclerView.Adapter<myRecyclerAdapter.In
                     Map<String,Object> map=list.get(getAdapterPosition());
                     bundle.putString("name",(String) map.get("name"));
                     bundle.putInt("num",(int) map.get("num"));
+                    bundle.putInt("box_id",(int) map.get("box_id"));
                     controller.navigate(R.id.action_navigation_home_to_navigation_dashboard,bundle);
+                    MainActivity.logs_his((String) map.get("name"));
+                    if(!constance.his_qurey.contains(map.get("name")))
+                        constance.his_qurey.add((String) map.get("name"));
                 }
             });
         }
